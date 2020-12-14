@@ -6,4 +6,4 @@ export type UserState = {
 };
 
 // will add proper action types later
-export type UserAction = any;
+export type UserAction = { type: "user/toggleFavorite"; payload: number };
