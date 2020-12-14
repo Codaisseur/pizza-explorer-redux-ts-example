@@ -35,6 +35,22 @@ const initialState: PizzasState = {
 
 export default function reducer(state = initialState, action: PizzasAction) {
   switch (action.type) {
+    case "pizzas/add": {
+      return {
+        ...state,
+        allPizzas: [
+          ...state.allPizzas,
+          {
+            id: action.payload.id,
+            name: action.payload.name,
+            description: action.payload.description,
+            bought: 0,
+            image:
+              "https://uncutrecipes.com/Images-Recipes-Italian/Pizza-alla-Napoletana-with-Mozzarella-Cheese.jpg",
+          },
+        ],
+      };
+    }
     default: {
       return state;
     }

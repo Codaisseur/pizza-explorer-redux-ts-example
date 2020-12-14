@@ -12,4 +12,7 @@ export type PizzasState = {
 };
 
 // will add proper action types later
-export type PizzasAction = any;
+export type PizzasAction = {
+  type: "pizzas/add";
+  payload: any;
+};
