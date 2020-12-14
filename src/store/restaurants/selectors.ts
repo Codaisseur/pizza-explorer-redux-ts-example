@@ -8,3 +8,11 @@ export const selectRestaurants = (reduxState: ReduxState) => {
     return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
   });
 };
+
+export const selectRestaurantsThatSellPizza = (pizzaId: number) => (
+  reduxState: ReduxState
+) => {
+  return reduxState.restaurants.allRestaurants.filter(restaurant =>
+    restaurant.pizzas.includes(pizzaId)
+  );
+};
